@@ -1,0 +1,43 @@
+[
+    {
+      "image":"src/images/catogeriesimages/catogeriesimages01.png",
+      "name": "boAt Airdopes 161"
+    },
+    {
+        "image": "src/images/catogeriesimages/catogeriesimages02.png",
+        "name": "JBL Tune 230NC"
+      },
+      {
+        "image": "src/images/catogeriesimages/catogeriesimages03.png",
+        "name": "Sony WF-C500"
+      },
+      {
+        "image": "src/images/catogeriesimages/catogeriesimages04.png",
+        "name": "Samsung Galaxy Buds2"
+      },
+      {
+        "image": "src/images/catogeriesimages/catogeriesimages05.png",
+        "name": "Apple AirPods 3rd Gen"
+      },
+      {
+        "image": "src/images/catogeriesimages/catogeriesimages06.png",
+        "name": "Realme Buds Air 3"
+      },
+      {
+        "image": "src/images/catogeriesimages/catogeriesimages07.png",
+        "name": "OnePlus Buds Z2"
+      },
+      {
+        "image": "src/images/catogeriesimages/catogeriesimages08.png",
+        "name": "Anker Soundcore Life P3"
+      },
+      {
+        "image": "src/images/catogeriesimages/catogeriesimages09.png",
+        "name": "Noise Air Buds Pro 2"
+      },
+      {
+        "image": "src/images/catogeriesimages/catogeriesimages10.png",
+        "name": "Skullcandy Sesh Evo"
+      }
+]
+  

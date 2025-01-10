@@ -1,0 +1,22 @@
+[
+    {
+      "video":"src/images/productvideos/vid1.mp4",
+      "name": "Smartwatches"
+    },
+    {
+      "video":"src/images/productvideos/vid2.mp4",
+      "name": "Wireless Earbuds"
+    },
+    {
+      "video":"src/images/productvideos/vid3.mp4",
+      "name": "Neckbands"
+    },
+    {
+      "video":"src/images/productvideos/vid4.mp4",
+      "name": "Headphones"
+    },
+    {
+      "video":"src/images/productvideos/vid5.mp4",
+      "name": "Wireless Speakers"
+    }
+]
