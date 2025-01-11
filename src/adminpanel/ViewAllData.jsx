@@ -6,6 +6,7 @@ const ViewAllData = () => {
     const navigate=useNavigate()
     const [data,setdata]=useState([]);
     const [deletedId,setiddeleted]=useState(false);
+    const [deletedcategoryId,setcategoryiddeleted]=useState(false);
     const [data2,setdata2]=useState([]);
     function openAddData(){
         navigate('/ProductForm')
@@ -38,7 +39,7 @@ const ViewAllData = () => {
       .catch((err)=>{
           console.log(err )
       })
-  },[])
+  },[deletedcategoryId])
   console.log(data2)
 
   function deleteproduct(id){
@@ -48,6 +49,20 @@ const ViewAllData = () => {
       console.log('params sent',res.data.idDeleted)
       if(res.data.idDeleted==true){
         setiddeleted(!deletedId)
+      }
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  function deletecategory(id){
+    // console.log(id)
+    axios.get(`http://localhost:3000/product/deletecategory/${id}`)
+    .then((res)=>{
+      // console.log('category params sent',res.data.idDeleted)
+      if(res.data.idDeleted==true){
+        setcategoryiddeleted(!deletedcategoryId)
       }
     })
     .catch((err)=>{
@@ -129,6 +144,7 @@ const ViewAllData = () => {
               <td className="border border-gray-300 px-4 py-2 flex space-x-2">
                 <button
                   className="bg-red-500 text-white px-3 py-1 rounded"
+                  onClick={()=>{deletecategory(item._id)}}
                 >
                   Delete
                 </button>
