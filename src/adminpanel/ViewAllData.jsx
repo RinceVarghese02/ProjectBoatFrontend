@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 const ViewAllData = () => {
     const navigate=useNavigate()
     const [data,setdata]=useState([]);
+    const [deletedId,setiddeleted]=useState(false);
     const [data2,setdata2]=useState([]);
     function openAddData(){
         navigate('/ProductForm')
@@ -24,7 +25,7 @@ const ViewAllData = () => {
         .catch((err)=>{
             console.log(err )
         })
-    },[])
+    },[deletedId])
     console.log(data)
 
     useEffect(()=>{
@@ -39,6 +40,20 @@ const ViewAllData = () => {
       })
   },[])
   console.log(data2)
+
+  function deleteproduct(id){
+    // console.log(id)
+    axios.get(`http://localhost:3000/product/deleteproduct/${id}`)
+    .then((res)=>{
+      console.log('params sent',res.data.idDeleted)
+      if(res.data.idDeleted==true){
+        setiddeleted(!deletedId)
+      }
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
 
 
   return (
@@ -75,6 +90,7 @@ const ViewAllData = () => {
               <td className="border border-gray-300 px-4 py-2 flex space-x-2">
                 <button
                   className="bg-red-500 text-white px-3 py-1 rounded"
+                  onClick={()=>{deleteproduct(item._id)}}
                 >
                   Delete
                 </button>
