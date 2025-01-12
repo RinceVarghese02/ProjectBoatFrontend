@@ -70,10 +70,14 @@ const ViewAllData = () => {
     })
   }
 
+  function editcategory(id){
+    console.log(id)
+  }
+
 
   return (
     <>
-    <div className="container mx-auto p-4">
+    <div className="overflow-x-auto p-4">
       <h1 className="text-2xl font-bold mb-4">View All Product Data</h1>
       <button
         className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
@@ -103,6 +107,7 @@ const ViewAllData = () => {
               <td className="border border-gray-300 px-4 py-2">{item.createdAt}</td>
               <td className="border border-gray-300 px-4 py-2">{item.updatedAt}</td>
               <td className="border border-gray-300 px-4 py-2 flex space-x-2">
+                <button className="bg-green-500 text-white px-3 py-1 rounded">Edit</button>
                 <button
                   className="bg-red-500 text-white px-3 py-1 rounded"
                   onClick={()=>{deleteproduct(item._id)}}
@@ -117,7 +122,7 @@ const ViewAllData = () => {
     </div>
 
     {/* // Categories Data */}
-    <div className="container mx-auto p-4">
+    <div className="overflow-x-auto p-4">
       <h1 className="text-2xl font-bold mb-4">View All Categories Data</h1>
       <button
         className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
@@ -132,6 +137,7 @@ const ViewAllData = () => {
             <th className="border border-gray-300 px-4 py-2">Image</th>
             <th className="border border-gray-300 px-4 py-2">Created At</th>
             <th className="border border-gray-300 px-4 py-2">Updated At</th>
+            <th className="border border-gray-300 px-4 py-2">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -142,6 +148,11 @@ const ViewAllData = () => {
               <td className="border border-gray-300 px-4 py-2">{item.createdAt}</td>
               <td className="border border-gray-300 px-4 py-2">{item.updatedAt}</td>
               <td className="border border-gray-300 px-4 py-2 flex space-x-2">
+              <button 
+                className="bg-green-500 text-white px-3 py-1 rounded"
+                onClick={()=>{editcategory(item._id)}}
+              > Edit
+              </button>
                 <button
                   className="bg-red-500 text-white px-3 py-1 rounded"
                   onClick={()=>{deletecategory(item._id)}}
