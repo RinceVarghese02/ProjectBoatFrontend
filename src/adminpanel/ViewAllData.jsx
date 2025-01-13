@@ -7,6 +7,7 @@ const ViewAllData = () => {
     const [data,setdata]=useState([]);
     const [deletedId,setiddeleted]=useState(false);
     const [deletedcategoryId,setcategoryiddeleted]=useState(false);
+    const [editedcategoryId,setcategoryidEdited]=useState(false);
     const [data2,setdata2]=useState([]);
     function openAddData(){
         navigate('/ProductForm')
@@ -40,7 +41,7 @@ const ViewAllData = () => {
           console.log(err )
       })
   },[deletedcategoryId])
-  console.log(data2)
+  // console.log(data2)
 
   function deleteproduct(id){
     // console.log(id)
@@ -71,7 +72,8 @@ const ViewAllData = () => {
   }
 
   function editcategory(id){
-    console.log(id)
+    // console.log(id)
+    navigate('/EditCategoriesForm',{state:id})
   }
 
 
