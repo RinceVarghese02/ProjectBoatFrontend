@@ -10,6 +10,7 @@ import ProductForm from './adminpanel/ProductForm'
 import CategoriesForm from './adminpanel/CategoriesForm'
 import EditCategoriesForm from './adminpanel/EditCategoriesForm'
 import PageNotFound from './PageNotFound'
+import EditProductsForm from './adminpanel/EditProductsForm'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/ProductForm' element={<ProductForm/>} />
         <Route path='/CategoriesForm' element={<CategoriesForm/>} />
         <Route path='/EditCategoriesForm' element={<EditCategoriesForm/>} />
+        <Route path='/EditProductsForm' element={<EditProductsForm/>} />
         <Route path='/ViewAllData' element={<ViewAllData/>} />
         <Route path='/*' element={<PageNotFound/>} />
         </Route>
