@@ -16,6 +16,7 @@ const Navbar = () => {
     const [carttoggle, setcarttoggle] = useState(false)
     const [categories, setcategories] = useState(false)
     const [signuplogin, setsignuplogin] = useState(true)
+    const [Menutoggle, setMenutoggle] = useState(false)
     const [resdataname, setresdataname] = useState(null)
 
     const [forminpdata, setforminpdata] = useState({})
@@ -76,6 +77,10 @@ const Navbar = () => {
             {res.data.isSignup==true?setsignuplogin(false):setsignuplogin(true)}
         })
         .catch((err)=>{console.log(err)})
+    }
+
+    function menutoggle(){
+        setMenutoggle(!Menutoggle)
     }
 
   return (
@@ -155,13 +160,14 @@ const Navbar = () => {
        </div>}
         
     </div>
-
-    <div className='h-full w-[32%] right-0 absolute bg-white transition-all duration-[600ms] ease-in-out'  style={{
+ 
+    {/* cart section */}
+    <div className='h-full lg:w-[32%] right-0 absolute bg-white transition-all duration-[600ms] ease-in-out'  style={{
         right:carttoggle?'0%':'-100%'
     }} onClick={(e)=>e.stopPropagation()}>
         <h1 className='text-2xl font-semibold p-5 text-gray-800'>Your Cart</h1>
         <div className='w-full h-full flex flex-col justify-center items-center gap-3'>
-            <h1 className='text-gray-800 text-2xl font-semibold'>Your cart is feeling lonely</h1>
+            <h1 className='text-gray-800 text-2xl font-semibold text-center'>Your cart is feeling lonely</h1>
             <button className="font-bold bg-gray-800 text-[16px] px-10 py-3 rounded-xl my-3 text-white w-[50%]">Start Shopping</button>
         </div>
         
@@ -178,7 +184,7 @@ const Navbar = () => {
             <h1>Get 5% off on First Order | Code: <span className='font-bold'>WELCOME5 | <u>Shop Now!</u></span></h1>
         </div>
         <div className='flex justify-between items-center font-semibold py-6 px-10 bg-white'>
-            <LuMenu className='xss:flex lg:hidden shrink-0'/>
+            <LuMenu className='xss:flex lg:hidden shrink-0 relative' onClick={menutoggle}/>
             <div className='flex xl:justify-between items-center lg:gap-14 text-center shrink-0 '>
                 <img src={img1} className='xss:hidden xs:block h-[35px] cursor-pointer' onClick={home}/>
                 <ul className='xss:hidden lg:flex lg:gap-5 text-gray-700'>
@@ -193,6 +199,24 @@ const Navbar = () => {
                     </div>
                     <li onClick={boatpersonalise} className='hover:text-black hover:font-bold cursor-pointer'>boAt Personalisation</li>
                     <li>Corporate Orders</li>
+                    <li className='flex items-center gap-1'>More<IoIosArrowDown/></li>
+                </ul>
+
+                {/* menubutton */}
+                <ul className='text-gray-700 absolute left-0 top-[100%] bg-white rounded-lg text-center p-2 shadow-lg w-full flex-col gap-2 items-center' style={{
+                    display:Menutoggle?'flex':'none',
+                }}>
+                    <li className='flex items-center gap-1 hover:text-black hover:font-bold cursor-pointer relative' onClick={opencategories}>Categories<IoIosArrowDown/></li>
+                    <div className='absolute top-10 bg-white p-4 rounded-lg shadow-lg z-[99]' 
+                    style={{
+                        visibility:categories?'visible':'hidden',
+                    }}  >
+                        <h1>True Wireless Earbuds</h1>
+                        <h1>Wireless Speakers</h1>
+                        <h1>Cables</h1>
+                    </div>
+                    <li onClick={boatpersonalise} className='hover:text-black hover:font-bold cursor-pointer flex'>boAt Personalisation</li>
+                    <li className='flex'>Corporate Orders</li>
                     <li className='flex items-center gap-1'>More<IoIosArrowDown/></li>
                 </ul>
             </div>

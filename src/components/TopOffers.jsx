@@ -26,6 +26,7 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import CategoriesCards from '../components/CategoriesCards'
 import ProductVideos from './productvideos'
 import axios from 'axios'
+import ScrollToTop from './ScrollToTop'
 
 const TopOffers = () => {
 
@@ -97,6 +98,7 @@ const TopOffers = () => {
 
     return (
         <>
+            <ScrollToTop/>
             <div className='w-full '>
                 <IoIosArrowForward className='absolute select-none right-5 text-white bg-[#1A2024]  h-10 w-10 rounded-full p-3 xss:hidden xs:block z-[4] xs:top-[60%] hover:border-2 hover:border-gray-600' onClick={right} />
                 <IoIosArrowBack className='absolute select-none left-5 text-white bg-[#1A2024]  h-10 w-10 rounded-full p-3 xss:hidden xs:block z-[4] xs:top-[60%] hover:border-2 hover:border-gray-600' onClick={left} />

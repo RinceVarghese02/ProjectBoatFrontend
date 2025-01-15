@@ -8,6 +8,11 @@ const Cards = (props) => {
   function productdetail(){
     navigate('/product')
   }
+
+  function productid(id){
+    console.log(id)
+  }
+
   return (
     <>
     
@@ -56,6 +61,12 @@ const Cards = (props) => {
         </div>
         <span>{props.data.colorAvailableCount}</span>
       </div>
+
+      <div className='flex gap-1 m-2 flex-col' onClick={(e)=>{e.stopPropagation()}}>
+      <button className='bg-gray-900 py-1 px-2 rounded-lg text-gray-100 font-semibold' onClick={()=>{productid(props.data._id)}}>Add to Cart</button>
+      <button className='bg-gray-900 py-1 px-2 rounded-lg text-gray-100 font-semibold'>Buy Now</button>
+      </div>
+      
     </div>
     </>
   )

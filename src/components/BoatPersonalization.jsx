@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 
 const products = [
   {
@@ -100,6 +101,8 @@ const boatPersonalization = () => {
     }
 
   return (
+    <>
+    <ScrollToTop/>
     <div className="py-6 px-10">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">Special Range — Personalised Products</h2>
       <div className="flex justify-between items-center mb-4">
@@ -163,6 +166,7 @@ const boatPersonalization = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
