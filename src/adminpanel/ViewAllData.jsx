@@ -90,7 +90,7 @@ const ViewAllData = () => {
           className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
           onClick={openAddData}
         >
-          Add Data
+          Add Product Data
         </button>
         <table className="table-auto w-full border-collapse border border-gray-200">
           <thead>
@@ -135,7 +135,7 @@ const ViewAllData = () => {
           className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
           onClick={openAddCategory}
         >
-          Add Data
+          Add Categories Data
         </button>
         <table className="table-auto w-full border-collapse border border-gray-200">
           <thead>
